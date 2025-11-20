@@ -1,0 +1,6 @@
+{
+  "name": "MoodMeter SMKN1 Robatal",
+  "short_name": "MoodMeter",
+  "start_url": "index.html",
+  "display": "standalone"
+}

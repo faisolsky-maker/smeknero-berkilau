@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MoodMeter Final v4</title>
+<link rel="stylesheet" href="css/style.css"></head><body>
+<header class="header">
+  <div class="logo"><img src="assets/assets/logo.png" alt="logo"></div>
+  <div class="h-title"><h1>MoodMeter Sekolah</h1><p class="small">by siswa RPL — SMKN 1 ROBATAL</p></div>
+</header>
+<nav>
+  <button class="nav-btn home ripple" onclick="navPage('home')">Home</button>
+  <button class="nav-btn tips ripple" onclick="navPage('tipsPage')">Tips & Trik</button>
+  <button class="nav-btn primbon ripple" onclick="navPage('primbonPage')">Primbon</button>
+  <button class="nav-btn admin ripple" onclick="location.href='admin.html'">Login Admin / Guru BK</button>
+</nav>
+<div class="container">
+  <main id="home" class="card">
+    <h2>Pilih Mood Hari Ini</h2>
+    <input id="name" class="input" placeholder="Nama lengkap (opsional)">
+    <div class="row"><select id="kelas" class="input"><option value=''>Kelas</option><option>X</option><option>XI</option><option>XII</option></select><select id="jurusan" class="input"><option value=''>Jurusan</option><option>RPL</option><option>AK</option><option>TKR</option><option>DPIB</option></select></div>
+    <textarea id="curhat" placeholder="Curhat singkat untuk Guru BK (opsional)"></textarea>
+    <div class="mood-grid">
+      <div class="mood-btn" data-mood="5" onclick="selectMood(5)"><span class="mood-emoji">😊</span><div class="mood-name">Senang</div></div>
+      <div class="mood-btn" data-mood="4" onclick="selectMood(4)"><span class="mood-emoji">🙂</span><div class="mood-name">Biasa</div></div>
+      <div class="mood-btn" data-mood="3" onclick="selectMood(3)"><span class="mood-emoji">😓</span><div class="mood-name">Capek</div></div>
+      <div class="mood-btn" data-mood="2" onclick="selectMood(2)"><span class="mood-emoji">😔</span><div class="mood-name">Sedih</div></div>
+      <div class="mood-btn" data-mood="1" onclick="selectMood(1)"><span class="mood-emoji">😡</span><div class="mood-name">Marah</div></div>
+    </div>
+    <div id="suggestion" class="tips-box">Pilih mood untuk melihat saran lengkap.</div>
+    <div id="relaxContainer" class="tips-box" style="display:none"><div id="relaxStatus" class="relax-status">...</div><div id="relaxCircle" class="relax-circle">...</div></div>
+    <button onclick="saveMood()" style="margin-top:10px;padding:12px;width:100%;border:none;border-radius:10px;background:linear-gradient(90deg,#ff6b6b,#ffd166);color:#fff;font-weight:700">Simpan & Kirim ke BK</button>
+  </main>
+  <main id="tipsPage" class="card" style="display:none"><h2>Tips & Trik Lengkap</h2><div id="tipsContent" class="tips-box">Pilih mood di halaman Home.</div></main>
+  <main id="primbonPage" class="card" style="display:none"><h2>Primbon & Ramalan</h2><div style="margin-top:8px"><input id="pName" class="input" placeholder="Nama lengkap"><input id="pDob" class="input" type="date" style="margin-top:8px"><button onclick="displayPrimbon()" style="margin-top:8px;padding:12px;width:100%;border:none;border-radius:10px;background:linear-gradient(90deg,#06d6a0,#4d7cff);color:#fff;font-weight:700">Dapatkan Ramalan</button></div><div id="primResult" class="tips-box" style="margin-top:12px">Isi nama & tanggal lahir.</div></main>
+  <aside class="right"><div class="card"><h3>Tentang Sekolah</h3><a class="link" href="https://www.smkn1robatal.sch.id" target="_blank"><img src="assets/icons/star.svg" class="icon" /> Website Resmi SMKN 1 Robatal</a><hr style="margin:12px 0"><h3>Kontak Guru BK</h3><a class="link" href="https://wa.me/+6282333397915" target="_blank"><img src="assets/icons/medal.svg" class="icon" /> Hubungi Guru BK via WhatsApp</a></div></aside>
+</div>
+<footer class="footer">© SMKN 1 ROBATAL — MoodMeter by siswa RPL. Data tersimpan lokal untuk Guru BK.</footer>
+<script src="js/ui.js"></script>
+<script src="js/mood.js"></script>
+<script src="js/primbon.js"></script>
+<script src="auto-relax-music.js"></script>
+</body></html>
